@@ -19,3 +19,4 @@ Programming in Python
 Beard trimmer
 ```
 The results is then randomly generated and stored in `results.csv`
+I take it back, its extremely bad nice generator.

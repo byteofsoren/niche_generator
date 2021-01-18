@@ -31,14 +31,14 @@ def main(myexp_path:str,nr:int)->list:
     for ide in range(nr):
         myexp_sel = myexp[np.random.randint(0,len(myexp))].replace("\n","")
         sub_sel = sub[np.random.randint(0,len(sub))].replace("\n","")
-        obj_sel = obj[np.random.randint(0,len(obj))]
+        obj_sel = obj[np.random.randint(0,len(obj))].replace(","," ")
         verb_row = np.random.randint(0,verb.shape[0])
         verb_col = verb.keys()[np.random.randint(0,2)]
         verb_sel = verb[verb_col][verb_row].replace("\n","")
         # print(f"{myexp[myexp_sel], obj[obj_sel]}")
         # print(f"{myexp[myexp_sel].replace('\n','')},{verb[verb_col][verb_sel]}, {obj[obj_sel]}")
         # print(f"{myexp_sel}, {verb_sel}, {obj_sel}",end="")
-        ret.append([myexp_sel, f"{sub_sel} {verb_sel} {obj_sel}".replace("\n",""),""])
+        ret.append([myexp_sel, f"{sub_sel} {verb_sel} {obj_sel}".replace("\n","").replace(","," "),""])
 
     csvdata = str()
     for item in ret:
